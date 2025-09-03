@@ -1,1 +1,13 @@
+name: Main CI workflow
 
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-build:
+    name: Call Reusable Workflow
+    uses: JaeAiKay/node-template/.github/workflows/node-build-template.yml@main
+    with:
+      node-version: '20'
